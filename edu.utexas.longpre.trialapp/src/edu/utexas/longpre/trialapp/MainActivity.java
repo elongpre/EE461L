@@ -12,7 +12,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-
+	private int state = 0;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -42,6 +42,12 @@ public class MainActivity extends Activity {
 	
 	public void switchImage(View view){
 		ImageView image = (ImageView)findViewById(R.id.icon);
-		image.setImageResource(R.drawable.steam);
+		if(state == 0){
+			image.setImageResource(R.drawable.steam);
+			this.state = 1;
+		}else {
+			image.setImageResource(R.drawable.dragon);
+			this.state = 0;
+		}
 	}
 }
