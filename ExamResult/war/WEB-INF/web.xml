@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>ExamResult</servlet-name>
+    <servlet-class>examresult.ExamResultServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ExamResult</servlet-name>
+    <url-pattern>/examresults</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>ExamResultsBot</servlet-name>
+	<servlet-class>examresult.ExamResultsBotServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>ExamResultsBot</servlet-name>
+	<url-pattern>/_ah/xmpp/message/chat/</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ExamResultsEmailHandler</servlet-name>  
+   	<servlet-class>examresult.ExamResultsEmailHandlerServlet</servlet-class>  
+  </servlet>
+  
+  <servlet-mapping>   
+      <servlet-name>ExamResultsEmailHandler</servlet-name>   
+      <url-pattern>/_ah/mail/*</url-pattern>  
+  </servlet-mapping>
+     
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  <error-page>
+  		<description>Uncaught exception</description>
+  		<error-code>500</error-code>
+  		<location>/error.jsp</location>
+  </error-page>
+
+</web-app>

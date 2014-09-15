@@ -1,0 +1,3 @@
+# Module examresult
+# RPC service class, partial path of RPC policy file
+examresult.client.GreetingService, B300783A95537F19FC165DEB5CD7DAF8.gwt.rpc
